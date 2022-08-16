@@ -19,7 +19,7 @@ public class WishRestaurantRepositoryTest {
         wishRestaurant.setTitle("title");
         wishRestaurant.setCategory("category");
         wishRestaurant.setAddress("address");
-        wishRestaurant.setReadAddress("readAddress");
+        wishRestaurant.setRoadAddress("readAddress");
         wishRestaurant.setHomePageLink("");
         wishRestaurant.setImageLink("");
         wishRestaurant.setVisit(false);
@@ -48,7 +48,7 @@ public class WishRestaurantRepositoryTest {
         var saveEntity = wishRestaurantRepository.save(expected);
 
         Assertions.assertEquals("update test", saveEntity.getTitle());
-        Assertions.assertEquals(1, wishRestaurantRepository.listAll().size());
+        Assertions.assertEquals(1, wishRestaurantRepository.findAll().size());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class WishRestaurantRepositoryTest {
 
         wishRestaurantRepository.deleteById(1);
 
-        int count = wishRestaurantRepository.listAll().size();
+        int count = wishRestaurantRepository.findAll().size();
 
         Assertions.assertEquals(0, count);
     }
@@ -84,7 +84,7 @@ public class WishRestaurantRepositoryTest {
         var wishRestaurantEntity2 = create();
         wishRestaurantRepository.save(wishRestaurantEntity2);
 
-        int count = wishRestaurantRepository.listAll().size();
+        int count = wishRestaurantRepository.findAll().size();
 
         Assertions.assertEquals(2, count);
 

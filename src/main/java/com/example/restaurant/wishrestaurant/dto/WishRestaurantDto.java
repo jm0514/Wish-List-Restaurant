@@ -1,9 +1,7 @@
-package com.example.restaurant.wishrestaurant.entity;
+package com.example.restaurant.wishrestaurant.dto;
 
-import com.example.restaurant.db.MemoryDbEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -11,10 +9,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@EqualsAndHashCode(callSuper=false)
 
-public class WishRestaurantEntity extends MemoryDbEntity {
+public class WishRestaurantDto  {
 
+    private Integer index;
     private String title;                   //음식명,장소명
     private String category;                //카테고리
     private String address;                 //주소
